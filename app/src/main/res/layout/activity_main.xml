@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#1395da"
+    tools:context="com.saisreenivas.httpintro.theweatherapp.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:text="Atlanta, United Sttes of America"
+        android:textStyle="bold"
+        android:id="@+id/cityName"
+        />
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageId"
+        android:layout_below="@id/cityName"
+        android:layout_marginTop="24dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imageId"
+        android:layout_below="@id/cityName"
+        android:textSize="56dp"
+        android:text="20.6*C"
+        android:textColor="#fff"
+        android:id="@+id/temp_present"
+        android:layout_marginTop="24dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageId"
+        android:layout_marginTop="36dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:id="@+id/windName"
+        android:text="Wind: "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/windValue"
+        android:layout_toRightOf="@id/windName"
+        android:layout_below="@id/imageId"
+        android:layout_marginTop="36dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:text="4.77mps"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/windName"
+        android:layout_marginTop="12dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:id="@+id/conditionName"
+        android:text="Condition: "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/conditionValue"
+        android:layout_toRightOf="@id/conditionName"
+        android:layout_below="@id/windValue"
+        android:layout_marginTop="12dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:text="Rain(light rain)"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/conditionName"
+        android:layout_marginTop="12dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:id="@+id/pressureName"
+        android:text="Pressure: "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pressureValue"
+        android:layout_toRightOf="@id/pressureName"
+        android:layout_below="@id/conditionValue"
+        android:layout_marginTop="12dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:text="1005.0hPa"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pressureName"
+        android:layout_marginTop="12dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:id="@+id/humidityName"
+        android:text="Humidity: "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/humidityValue"
+        android:layout_toRightOf="@id/humidityName"
+        android:layout_below="@id/pressureValue"
+        android:layout_marginTop="12dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:text="73.0%"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/humidityName"
+        android:layout_marginTop="12dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:id="@+id/sunRiseName"
+        android:text="Sunrise: "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sunRiseValue"
+        android:layout_toRightOf="@id/sunRiseName"
+        android:layout_below="@id/humidityName"
+        android:layout_marginTop="12dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:text="12:09:21 PM"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sunRiseName"
+        android:layout_marginTop="12dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:id="@+id/sunSetName"
+        android:text="Sunset: "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sunSetValue"
+        android:layout_toRightOf="@id/sunSetName"
+        android:layout_below="@id/sunRiseValue"
+        android:layout_marginTop="12dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:text="12:10:03 PM"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sunSetName"
+        android:layout_marginTop="24dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:id="@+id/lastUpdatedName"
+        android:text="Last Updated: "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lastUpdatedValue"
+        android:layout_toRightOf="@id/lastUpdatedName"
+        android:layout_below="@id/sunSetName"
+        android:layout_marginTop="24dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:text="12:09:54 PM"/>
+
+
+
+
+</RelativeLayout>
