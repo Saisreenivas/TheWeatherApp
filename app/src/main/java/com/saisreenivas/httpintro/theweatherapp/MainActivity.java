@@ -1,6 +1,7 @@
 package com.saisreenivas.httpintro.theweatherapp;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -35,7 +36,7 @@ import data.JSONWeatherParser;
 import data.WeatherHttpClient;
 
 public class MainActivity extends AppCompatActivity {
-
+    private ProgressDialog progDailog;
     private TextView cityName, temp, description, humidity, pressure, wind, sunrise, sunset, updated;
     private ImageView iconView;
     Weather weather = new Weather();
@@ -56,14 +57,21 @@ public class MainActivity extends AppCompatActivity {
         updated = (TextView) findViewById(R.id.lastUpdatedValue);
         iconView = (ImageView) findViewById(R.id.imageId);
 
-        renderWeatherData("Seattle,US");
+        progDailog = new ProgressDialog(MainActivity.this);
+        progDailog.setMessage("Loading...");
+        progDailog.setIndeterminate(false);
+        progDailog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progDailog.setCancelable(true);
+        progDailog.show();
+//        renderWeatherData("Seattle,US");
+//        renderWeatherData("London,uk");
+        renderWeatherData("Delhi,India", progDailog);
 
-        weather.iconData = weather.currentCondition.getIcon();
-        new DownloadImageAsyncTask().execute(weather.iconData);
+
     }
 
-    public void renderWeatherData(String city){
-        WeatherTask weatherTask = new WeatherTask();
+    public void renderWeatherData(String city, ProgressDialog progDailog){
+        WeatherTask weatherTask = new WeatherTask(progDailog);
         weatherTask.execute(new String[]{ city + "&units=metric"});
     }
 
@@ -110,14 +118,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private class WeatherTask extends AsyncTask<String, Void, Weather> {
+    private class WeatherTask extends AsyncTask<String, String, Weather> {
+        private ProgressDialog progressDialog;
+        public WeatherTask(ProgressDialog progressDialog) {
+            this.progressDialog = progressDialog;
+        }
+
         @Override
         protected Weather doInBackground(String... params) {
 
             String data = ((new WeatherHttpClient()).getWeatherData(params[0]));
 
             weather = JSONWeatherParser.getWeather(data);
-
+            weather.iconData = weather.currentCondition.getIcon();
+            (new DownloadImageAsyncTask()).execute(weather.iconData);
             Log.v("Data: ", weather.currentCondition.getDescription());
 
 
@@ -126,9 +140,11 @@ public class MainActivity extends AppCompatActivity {
             return weather;
         }
 
+
         @Override
         protected void onPostExecute(Weather weather) {
             super.onPostExecute(weather);
+            progressDialog.dismiss();
 
             DateFormat df = DateFormat.getTimeInstance();
 
@@ -168,9 +184,12 @@ public class MainActivity extends AppCompatActivity {
 
                 String newCity = cityPref.getCity();
 
-                renderWeatherData(newCity);
+                progDailog.show();
+                renderWeatherData(newCity, progDailog);
             }
         });
+        builder.create();
+        builder.show();
     }
 
     @Override
