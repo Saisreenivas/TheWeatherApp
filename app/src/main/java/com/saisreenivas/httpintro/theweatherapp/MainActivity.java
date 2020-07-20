@@ -28,9 +28,8 @@ import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.util.Date;
 
-import Model.Place;
-import Model.Weather;
-import Util.Utils;
+import model.Weather;
+import util.Utils;
 import data.CityPreference;
 import data.JSONWeatherParser;
 import data.WeatherHttpClient;
@@ -62,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         progDailog.setIndeterminate(false);
         progDailog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progDailog.setCancelable(true);
-        progDailog.show();
+//        progDailog.show();
 //        renderWeatherData("Seattle,US");
 //        renderWeatherData("London,uk");
         renderWeatherData("Delhi,India", progDailog);

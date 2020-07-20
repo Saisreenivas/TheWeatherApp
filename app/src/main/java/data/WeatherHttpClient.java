@@ -7,8 +7,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import Model.Place;
-import Util.Utils;
+import util.Utils;
 
 
 /**

@@ -17,7 +17,7 @@
         android:textColor="#fff"
         android:layout_centerHorizontal="true"
         android:textAppearance="?android:textAppearanceLarge"
-        android:text="Atlanta, United Sttes of America"
+        android:text="Atlanta, United States of America"
         android:textStyle="bold"
         android:id="@+id/cityName"
         />
@@ -27,17 +27,18 @@
         android:id="@+id/imageId"
         android:layout_below="@id/cityName"
         android:layout_marginTop="24dp"
-        />
+        android:contentDescription="TODO" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/imageId"
         android:layout_below="@id/cityName"
-        android:textSize="56dp"
+        android:textSize="56sp"
         android:text="20.6*C"
         android:textColor="#fff"
         android:id="@+id/temp_present"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="24dp"
+        android:layout_toEndOf="@id/imageId" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,7 +57,8 @@
         android:layout_marginTop="36dp"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="#fff"
-        android:text="4.77mps"/>
+        android:text="4.77mps"
+        android:layout_toEndOf="@id/windName" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,7 +77,8 @@
         android:layout_marginTop="12dp"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="#fff"
-        android:text="Rain(light rain)"/>
+        android:text="Rain(light rain)"
+        android:layout_toEndOf="@id/conditionName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -95,7 +98,8 @@
         android:layout_marginTop="12dp"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="#fff"
-        android:text="1005.0hPa"/>
+        android:text="1005.0hPa"
+        android:layout_toEndOf="@id/pressureName" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -114,7 +118,8 @@
         android:layout_marginTop="12dp"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="#fff"
-        android:text="73.0%"/>
+        android:text="73.0%"
+        android:layout_toEndOf="@id/humidityName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -134,7 +139,8 @@
         android:layout_marginTop="12dp"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="#fff"
-        android:text="12:09:21 PM"/>
+        android:text="12:09:21 PM"
+        android:layout_toEndOf="@id/sunRiseName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -154,7 +160,8 @@
         android:layout_marginTop="12dp"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="#fff"
-        android:text="12:10:03 PM"/>
+        android:text="12:10:03 PM"
+        android:layout_toEndOf="@id/sunSetName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -174,7 +181,8 @@
         android:layout_marginTop="24dp"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="#fff"
-        android:text="12:09:54 PM"/>
+        android:text="12:09:54 PM"
+        android:layout_toEndOf="@id/lastUpdatedName" />
 
 
 

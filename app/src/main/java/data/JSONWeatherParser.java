@@ -1,14 +1,12 @@
 package data;
 
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import Model.Place;
-import Model.Weather;
-import Util.Utils;
+import model.Place;
+import model.Weather;
+import util.Utils;
 
 /**
  * Created by Sai sreenivas on 2/20/2017.

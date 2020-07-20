@@ -19,6 +19,6 @@ public class CityPreference {
     }
 
     public void setCity(String city){
-        prefs.edit().putString("city", city).commit();
+        prefs.edit().putString("city", city).apply();
     }
 }
