@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView cityName, temp, description, humidity, pressure, wind, sunrise, sunset, updated;
     private ImageView iconView;
     Weather weather = new Weather();
-
+    //TODO blank case handling in Change City Dialog
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
