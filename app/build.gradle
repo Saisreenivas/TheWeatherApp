@@ -4,6 +4,9 @@ android {
     useLibrary 'org.apache.http.legacy'
     compileSdkVersion 29
     buildToolsVersion "25.0.3"
+    buildFeatures {
+        buildConfig = true
+    }
     defaultConfig {
         applicationId "com.saisreenivas.httpintro.theweatherapp"
         minSdkVersion 15
@@ -16,8 +19,27 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            buildConfigField("String", "WEATHER_API_KEY", "\"" + getTmdbApiKey() + "\"")
         }
+
+        debug {
+            buildConfigField("String", "WEATHER_API_KEY", "\"" + getTmdbApiKey() + "\"")
+        }
+
     }
+}
+
+def getTmdbApiKey() {
+    def tmdbApiKey = System.getenv("WEATHER_API_KEY")
+    if (tmdbApiKey == null || tmdbApiKey.length() == 0) {
+        def keysFile = file("keys.properties")
+        def keysProperties = new Properties()
+        keysProperties.load(new FileInputStream(keysFile))
+        tmdbApiKey = keysProperties['WEATHER_API_KEY']
+
+    }
+    return tmdbApiKey
 }
 
 dependencies {

@@ -1,5 +1,7 @@
 package util;
 
+import com.saisreenivas.httpintro.theweatherapp.BuildConfig;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -9,8 +11,10 @@ import org.json.JSONObject;
 
 public class Utils {
 
-    public static final String BASE_URL = "https://api.openweathermap.org/data/2.5/weather?appid=1292c3b91fd9adfd1f8144264bd2b40a&q=";
-    public static final String ICON_URL = "https://openweathermap.org/img/w/";
+    public static final String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?appid=" + BuildConfig.WEATHER_API_KEY + "&q=";
+    public static final String ICON_URL = "http://openweathermap.org/img/w/";
+
+
 
     public static JSONObject getObject(String tagName, JSONObject jsonObject) throws JSONException {
         JSONObject jObj = jsonObject.getJSONObject(tagName);

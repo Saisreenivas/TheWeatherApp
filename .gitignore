@@ -40,3 +40,6 @@ output.json
 
 #NDK
 obj/
+
+# Files with sensitive info
+app/keys.properties
