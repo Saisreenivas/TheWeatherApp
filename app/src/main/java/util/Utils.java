@@ -11,8 +11,8 @@ import org.json.JSONObject;
 
 public class Utils {
 
-    public static final String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?appid=" + BuildConfig.WEATHER_API_KEY + "&q=";
-    public static final String ICON_URL = "http://openweathermap.org/img/w/";
+    public static final String BASE_URL = "https://api.openweathermap.org/data/2.5/weather?appid=" + BuildConfig.WEATHER_API_KEY + "&q=";
+    public static final String ICON_URL = "https://openweathermap.org/img/w/";
 
 
 
