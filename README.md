@@ -1,4 +1,6 @@
 # Weather App
+[![CircleCI](https://circleci.com/gh/Saisreenivas/TheWeatherApp.svg?style=svg)](https://circleci.com/gh/Saisreenivas/TheWeatherApp)
+
 
 - Weather Application is an android app which shows weather details based on data from weather API.
 
