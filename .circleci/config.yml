@@ -73,7 +73,7 @@ workflows:
       - android/run-ui-tests:
           filters:
             branches:
-              ignore: main # regular commits
+              ignore: master # regular commits
       - android-test:
           matrix:
             alias: android-test-all
